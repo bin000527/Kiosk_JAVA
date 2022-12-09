@@ -1,0 +1,5 @@
+public class BlankException extends Exception{
+	public BlankException() {
+		super("빈칸 없이 입력해 주세요.");
+	}
+}

@@ -1,0 +1,5 @@
+public class CheckinStateException extends Exception{
+	public CheckinStateException() {
+		super("입실 상태");
+	}
+}

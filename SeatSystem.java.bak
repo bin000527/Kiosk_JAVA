@@ -1,0 +1,45 @@
+import java.util.ArrayList;
+
+class SeatSystem{
+	static int seatcheck[] = new int[41];
+	ArrayList<String> namearray = new ArrayList<>();
+	ArrayList<String> idarray = new ArrayList<>();
+	ArrayList<String> pwarray = new ArrayList<>();
+	ArrayList<String> phonenumarray = new ArrayList<>();
+	ArrayList<Integer> memberstate = new ArrayList<Integer>();
+	ArrayList<Integer> memberseat = new ArrayList<Integer>();
+	//boolean isFull = false;
+
+	public SeatSystem(){
+		for(int i=0; i<seatcheck.length; i++){
+			seatcheck[i] = 0;
+		}
+	}
+	
+	public synchronized void ckin(int seatnum, int index) {
+		seatcheck[seatnum] = 1;
+		memberstate.set(index,1);
+		memberseat.set(index,seatnum);
+		//return seatcheck[];
+		//isFull = true;
+		/*for (int i=0;i<seatcheck.length ;i++ )
+		{
+			if(seatcheck[i] == 0) isFull = false;
+		}*/
+	}
+
+	public synchronized void ckout(int seatnum, int index) {
+		seatcheck[seatnum] = 0;
+		memberstate.set(index,0);
+		memberseat.set(index,-1);
+	}
+
+	public synchronized void join(String name, String id, String pw, String pnum) {
+		namearray.add(name);
+		idarray.add(id);
+		pwarray.add(pw);
+		phonenumarray.add(pnum);
+		memberstate.add(0);
+		memberseat.add(-1);
+	}
+}

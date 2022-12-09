@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+
+public class InputTextField{
+	public InputTextField() {
+	}
+
+	public void checktfblank(String tf) throws BlankException{
+		if(tf==null||tf.equals("")) throw new BlankException(); 
+	}
+	
+	public void checkexistedid(ArrayList<String> idarr, String tfid) throws NonExistedIdException{
+		if (!idarr.contains(tfid)) throw new NonExistedIdException();
+	}
+	public void checkdiffpw(String idpw, String tfpw) throws DiffpwException{
+		if (!idpw.equals(tfpw)) throw new DiffpwException();
+	}
+
+	public void checkstate(int num) throws CheckinStateException{
+		if(num == 1) throw new CheckinStateException();
+	}
+
+	public void checksameid(ArrayList<String> idarr, String tfid) throws ExistedSameIdException{
+		if(idarr.contains(tfid)) throw new ExistedSameIdException();
+	}
+
+	public void checkoutstate(int num) throws CheckinStateException{
+		if (num == 0) throw new CheckinStateException();
+	}
+
+	public void checksamepn(ArrayList<String> pnarr, String tfid) throws ExistedSamePnException{
+		if(pnarr.contains(tfid)) throw new ExistedSamePnException();
+	}
+}
