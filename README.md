@@ -17,4 +17,4 @@
 
 
 ### ⭐ 객체 구조
-![image](https://user-images.githubusercontent.com/81465429/206714114-07b38ea6-30c0-475c-8b62-168b4bc43670.png)
+![image](https://user-images.githubusercontent.com/81465429/206737096-f91e5efc-15bb-473c-9040-ad57626eca15.png)
